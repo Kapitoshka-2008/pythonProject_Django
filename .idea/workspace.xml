@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a20f7697-80d1-4ef1-a049-d3ff5bc032f0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +25,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "feature/hw-01-setup"
   }
 }]]></component>
   <component name="SharedIndexes">
