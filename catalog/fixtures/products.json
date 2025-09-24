@@ -1,0 +1,41 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Smartphone",
+      "description": "Latest model smartphone",
+      "image": null,
+      "category": 1,
+      "price": "699.99",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "E-book Reader",
+      "description": "Read books digitally",
+      "image": null,
+      "category": 2,
+      "price": "129.00",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Sofa",
+      "description": "Comfortable 3-seat sofa",
+      "image": null,
+      "category": 3,
+      "price": "899.00",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  }
+]
