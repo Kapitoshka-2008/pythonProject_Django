@@ -15,3 +15,4 @@ class Command(BaseCommand):
 		call_command('loaddata', 'catalog/fixtures/categories.json')
 		call_command('loaddata', 'catalog/fixtures/products.json')
 		self.stdout.write(self.style.SUCCESS("Test data loaded successfully."))
+
