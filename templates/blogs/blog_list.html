@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% include 'partials/_menu.html' %}
+  <h1>Блог</h1>
+  <a href="{% url 'blogs:create' %}">Создать запись</a>
+  <ul>
+    {% for post in posts %}
+      <li>
+        <a href="{% url 'blogs:detail' post.pk %}">{{ post.title }}</a>
+        {% if post.preview %}<img src="{{ post.preview.url }}" alt="{{ post.title }}" style="height:60px">{% endif %}
+      </li>
+    {% empty %}
+      <li>Нет опубликованных записей</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% include 'partials/_menu.html' %}
+  <h1>{{ post.title }}</h1>
+  {% if post.preview %}<p><img src="{{ post.preview.url }}" alt="{{ post.title }}" style="max-height:240px"></p>{% endif %}
+  <p>{{ post.content }}</p>
+  <p>Просмотры: {{ post.views_count }}</p>
+  <p>
+    <a href="{% url 'blogs:update' post.pk %}">Редактировать</a> |
+    <a href="{% url 'blogs:delete' post.pk %}">Удалить</a> |
+    <a href="{% url 'blogs:list' %}">К списку</a>
+  </p>
+{% endblock %}
+
+
