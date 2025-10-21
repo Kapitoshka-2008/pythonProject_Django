@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-  {% include 'partials/_menu.html' %}
   <h1>{% if object %}Редактировать{% else %}Создать{% endif %} запись</h1>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}

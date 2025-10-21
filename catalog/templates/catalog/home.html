@@ -8,7 +8,10 @@
     <div class="container-fluid py-5">
       <h1 class="display-5 fw-bold">Добро пожаловать в Shop</h1>
       <p class="col-md-8 fs-4">Интернет-магазин, создаваемый шаг за шагом в рамках курса.</p>
-      <a class="btn btn-primary btn-lg" href="{% url 'catalog:contacts' %}">Связаться с нами</a>
+      <div class="d-flex gap-3">
+        <a class="btn btn-primary btn-lg" href="{% url 'catalog:contacts' %}">Связаться с нами</a>
+        <a class="btn btn-outline-primary btn-lg" href="{% url 'blogs:list' %}">Блог</a>
+      </div>
     </div>
   </div>
 
