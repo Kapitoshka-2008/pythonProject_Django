@@ -1,7 +1,9 @@
 {% extends 'catalog/base.html' %}
 {% block content %}
   <h1>Блог</h1>
-  <a href="{% url 'blogs:create' %}">Создать запись</a>
+  {% if user.is_authenticated and (user.is_superuser or user.groups.filter(name='Контент-менеджер').exists) %}
+    <a href="{% url 'blogs:create' %}">Создать запись</a>
+  {% endif %}
   <ul>
     {% for post in posts %}
       <li>

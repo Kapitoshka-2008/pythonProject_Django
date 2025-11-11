@@ -5,8 +5,10 @@
   <p>{{ post.content }}</p>
   <p>Просмотры: {{ post.views_count }}</p>
   <p>
-    <a href="{% url 'blogs:update' post.pk %}">Редактировать</a> |
-    <a href="{% url 'blogs:delete' post.pk %}">Удалить</a> |
+    {% if user.is_authenticated and (user.is_superuser or user.groups.filter(name='Контент-менеджер').exists) %}
+      <a href="{% url 'blogs:update' post.pk %}">Редактировать</a> |
+      <a href="{% url 'blogs:delete' post.pk %}">Удалить</a> |
+    {% endif %}
     <a href="{% url 'blogs:list' %}">К списку</a>
   </p>
 {% endblock %}
