@@ -153,3 +153,19 @@ EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
 EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL', 'False') == 'True'
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'webmaster@localhost')
 SERVER_EMAIL = os.getenv('SERVER_EMAIL', DEFAULT_FROM_EMAIL)
+
+# Cache settings
+REDIS_URL = os.getenv('REDIS_URL', 'redis://127.0.0.1:6379/1')
+DEFAULT_CACHE_TTL = int(os.getenv('CACHE_DEFAULT_TTL', '300'))
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': REDIS_URL,
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        },
+        'KEY_PREFIX': os.getenv('REDIS_CACHE_KEY_PREFIX', 'shop'),
+        'TIMEOUT': DEFAULT_CACHE_TTL,
+    },
+}

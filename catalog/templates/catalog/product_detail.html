@@ -16,7 +16,11 @@
     </div>
     <div class="col-md-6">
       <h1 class="mb-3">{{ product.name }}</h1>
-      <p class="text-muted mb-1">Категория: {{ product.category.name }}</p>
+      <p class="text-muted mb-1">Категория:
+        <a href="{% url 'catalog:category_products' product.category.pk %}">
+          {{ product.category.name }}
+        </a>
+      </p>
       <p class="lead">{{ product.price }} ₽</p>
       <p>{{ product.description }}</p>
       <div class="d-flex gap-2">
