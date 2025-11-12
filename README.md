@@ -30,3 +30,4 @@ py -3 -m venv .venv
 - Домашние задания — отдельные ветки от `develop` с PR в `develop`
 - В репозитории настроен `.gitignore`
 
+

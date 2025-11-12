@@ -1,0 +1,16 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+  <h1>{{ post.title }}</h1>
+  {% if post.preview %}<p><img src="{{ post.preview.url }}" alt="{{ post.title }}" style="max-height:240px"></p>{% endif %}
+  <p>{{ post.content }}</p>
+  <p>Просмотры: {{ post.views_count }}</p>
+  <p>
+    {% if user.is_authenticated and (user.is_superuser or user.groups.filter(name='Контент-менеджер').exists) %}
+      <a href="{% url 'blogs:update' post.pk %}">Редактировать</a> |
+      <a href="{% url 'blogs:delete' post.pk %}">Удалить</a> |
+    {% endif %}
+    <a href="{% url 'blogs:list' %}">К списку</a>
+  </p>
+{% endblock %}
+
+
